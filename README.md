@@ -14,4 +14,8 @@ The following resources are suggested (and free of charge).
 - Analytical math with python: https://docs.sympy.org/latest/index.html
 
 ## Podcasts
-- Python docstrings for Pysicists [Gemini based on mixed sources](https://github.com/ubsuny/PHY386/raw/refs/heads/main/media/Podcast_PythonDocstringConventionsForPhysicsts.wav)
+- Python docstrings for Pysicists (Gemini based on mixed sources)
+<audio controls>
+  <source src="https://github.com/ubsuny/PHY386/raw/refs/heads/main/media/Podcast_PythonDocstringConventionsForPhysicsts.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
