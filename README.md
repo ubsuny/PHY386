@@ -12,3 +12,6 @@ The following resources are suggested (and free of charge).
 - Astropy: https://www.astropy.org/
 - Quantum Mechanics Toolbox: https://qutip.org/
 - Analytical math with python: https://docs.sympy.org/latest/index.html
+
+## Podcasts
+- Python docstrings for Pysicists [Gemini based on mixed sources](https://github.com/ubsuny/PHY386/raw/refs/heads/main/media/Podcast_PythonDocstringConventionsForPhysicsts.wav)
