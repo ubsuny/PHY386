@@ -1,1 +1,1 @@
-This folder stores CSV data for expieriments.
+This folder stores CSV data for experiments.
