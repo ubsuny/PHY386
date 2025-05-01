@@ -2,7 +2,7 @@
 
 A list of all the projects, along with their main research focus and computational methods:
 
-*Optional:* If you want to submit your final via PR read [this](https://github.com/ubsuny/PHY386/blob/ebac6da8d210fc7ef03e82ecced17a08cbc824f2/2025/Final/HowToUploadViaPullRequest.md)
+*Optional:* If you want to submit your final via PR read [this](HowToUploadViaPullRequest.md)
 
 ---
 
