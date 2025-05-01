@@ -1,8 +1,13 @@
 # Repository for UB’s PHY 386 class “Computational methods for Physicists”
 
-You can find homeworks and hands-on here.
+all content (handson, Homework, Final, data, ...) by Tim Thomay (thomay@buffalo.edu)
+Homework and Final solutions by the students.
 
-Check the folder `2025` for this years class.
+You can find [homeworks](2025/HW) and [hands-on](2025/handson) here.
+
+Check the folder `2025` for this year's class.
+
+Final solutions to homeworks can be find using [tags](https://github.com/ubsuny/PHY386/tags) and the respective [releases](https://github.com/ubsuny/PHY386/releases)
 
 ## Resources
 The following resources are suggested (and free of charge).

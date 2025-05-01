@@ -2,15 +2,17 @@
 
 A list of all the projects, along with their main research focus and computational methods:
 
+*Optional:* If you want to submit your final via PR read [this](HowToUploadViaPullRequest.md)
+
 ---
 
-### **1. Asteroid Tracking (Project 1)**
+### **1. Asteroid Tracking (ddarrigo(Flora),rahatalberuni(Vesta),dnxjay(Irene))**
 - **Main Point of Research**: Tracking the motion of an asteroid and reconstructing its orbit.
 - **Computational Method**: Image processing, positional data extraction, and orbital modeling using Kepler's laws.
 
 ---
 
-### **2. Star Classification by Color (Project 2)**
+### **2. Star Classification by Color (drewalessi)**
 - **Main Point of Research**: Classifying stars based on their color indices and comparing them to known spectral classes.
 - **Computational Method**: Photometric data extraction, color index calculation, and machine learning for star classification.
 
@@ -22,31 +24,31 @@ A list of all the projects, along with their main research focus and computation
 
 ---
 
-### **4. Motion of the Moons of Jupiter (Project 4)**
+### **4. Motion of the Moons of Jupiter (williamdove)**
 - **Main Point of Research**: Tracking the motion of Jupiter's Galilean moons (Io, Europa, Ganymede, and Callisto) to determine their orbital motion.
 - **Computational Method**: Astrometry, positional data extraction, time-series analysis, and orbital parameter estimation.
 
 ---
 
-### **5. Bode's Galaxy and Its Companions (M81, M82, NGC 3077) (Project 5)**
+### **5. Bode's Galaxy and Its Companions (M81, M82, NGC 3077) (codeball01)**
 - **Main Point of Research**: Analyzing the structure and interaction of Bode’s Galaxy and its companions.
 - **Computational Method**: Surface photometry, model fitting (Sérsic profile), and galaxy interaction analysis.
 
 ---
 
-### **6. Cygnus X-1: Black Hole Analysis (Project 6)**
+### **6. Cygnus X-1: Black Hole Analysis (karlguen)**
 - **Main Point of Research**: Analyzing the X-ray and optical light curves of the Cygnus X-1 binary system to study its orbital characteristics and estimate the black hole’s mass.
 - **Computational Method**: Fourier analysis, periodicity detection, orbital modeling, and light curve fitting.
 
 ---
 
-### **7. Star Cluster Age Estimation via Color-Magnitude Diagram (Project 7)**
+### **7. Star Cluster Age Estimation via Color-Magnitude Diagram (iamtomoto)**
 - **Main Point of Research**: Estimating the age of a star cluster using its color-magnitude diagram.
 - **Computational Method**: Photometric data extraction, color-magnitude diagram plotting, and isochrone fitting.
 
 ---
 
-### **8. Solar Limb Darkening**
+### **8. Solar Limb Darkening (zman42)**
 - **Main Point of Research**: Analyzing the **solar limb darkening** effect using high-resolution solar images.
 - **Computational Method**: Image analysis, curve fitting, and modeling the decrease in brightness at the solar limb.
 
@@ -58,7 +60,7 @@ A list of all the projects, along with their main research focus and computation
 
 ---
 
-### **10. Lunar Crater Size Distribution**
+### **10. Lunar Crater Size Distribution(jdrath,eodangelo)**
 - **Main Point of Research**: Studying the distribution of crater sizes on the Moon’s surface to understand impact history and planetary formation.
 - **Computational Method**: Image processing, crater detection, statistical analysis, and fitting power-law distributions.
 
