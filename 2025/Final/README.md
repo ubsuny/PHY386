@@ -2,9 +2,11 @@
 
 A list of all the projects, along with their main research focus and computational methods:
 
+*Optional:* If you want to submit your final via PR read [this](https://github.com/ubsuny/PHY386/blob/ebac6da8d210fc7ef03e82ecced17a08cbc824f2/2025/Final/HowToUploadViaPullRequest.md)
+
 ---
 
-### **1. Asteroid Tracking (ddarrigo,...,...)**
+### **1. Asteroid Tracking (ddarrigo(Flora),rahatalberuni(Vesta),dnxjay(Irene))**
 - **Main Point of Research**: Tracking the motion of an asteroid and reconstructing its orbit.
 - **Computational Method**: Image processing, positional data extraction, and orbital modeling using Kepler's laws.
 
