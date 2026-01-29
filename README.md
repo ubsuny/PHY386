@@ -3,9 +3,9 @@
 all content (handson, Homework, Final, data, ...) by Tim Thomay (thomay@buffalo.edu)
 Homework and Final solutions by the students.
 
-You can find [homeworks](2025/HW) and [hands-on](2025/handson) here.
+You can find [homeworks](2026/HW) and [hands-on](2026/handson) here.
 
-Check the folder `2025` for this year's class.
+Check the folder `2026` for this year's class.
 
 Final solutions to homeworks can be find using [tags](https://github.com/ubsuny/PHY386/tags) and the respective [releases](https://github.com/ubsuny/PHY386/releases)
 
