@@ -169,3 +169,35 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Local data files (not needed in repo)
+data/*.png
+data/*.fz
+data/BetelgeuseForTesting.fits
+data/Stacked_379_mosaic_*.fit
+
+# Empty template directories for Final projects
+2025/Final/Asteriods/
+2025/Final/BodesGalaxy/
+2025/Final/CygnusX/
+2025/Final/Jupiter/
+2025/Final/Moon/
+2025/Final/StarCatergorization/
+2025/Final/StarCluster/
+2025/Final/Sun/
+
+# IDE settings
+.vscode/
