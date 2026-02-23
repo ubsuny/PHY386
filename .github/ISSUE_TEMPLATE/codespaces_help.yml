@@ -1,0 +1,40 @@
+name: Codespaces Help
+description: Having trouble with Codespaces setup or workflow
+title: "[Codespaces] "
+labels: ["codespaces", "help-wanted"]
+assignees:
+  - laserlab
+body:
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What's the issue?
+      options:
+        - Can't open Codespace
+        - Environment not loading correctly
+        - Jupyter not working
+        - Git commands failing
+        - Push/pull errors
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the problem
+      description: What happened? Include any error messages.
+      placeholder: "Example: When I run 'git push' I get 'Permission denied (publickey)'"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - Other
