@@ -1,28 +1,29 @@
-## Homework [N] Submission
+<!-- IMPORTANT: Change the PR title to: HW3 - 2026 - yourgithubusername -->
 
-<!-- Replace [N] with your homework number (1-6) or "Final" for final project -->
+## Homework 3 Submission
 
-**Assignment:** HW[N]
+**Workflow Check:**
+<!-- This homework uses FEATURE BRANCHES (no fork needed) -->
+<!-- Your PR should be: yourname-hw3 → Homework2026 -->
 
----
+**Type of Submission:**
+- [ ] In progress (requesting feedback, not ready to merge)
+- [ ] Final submission (all feedback addressed, ready to merge)
 
-## Type of Submission
-
-<!-- Add ONE of these labels to this PR after creating it: -->
-<!-- - homework-in-progress  (requesting feedback, not ready to merge) -->
-<!-- - homework-final  (all feedback addressed, ready to merge) -->
+<!-- After creating the PR, add the corresponding label: homework-in-progress OR homework-final -->
 
 ---
 
 ## Checklist
 
+- [ ] Created feature branch named `yourname-hw3` from `Homework2026`
 - [ ] All code cells execute without errors
 - [ ] All functions have proper docstrings
 - [ ] Test cases pass
 - [ ] Answered all written questions
-- [ ] No unrelated files committed (only my homework folder)
+- [ ] No unrelated files committed (only `2026/HW/yourname/HW3.ipynb`)
 - [ ] Assigned **@laserlab** for review
-- [ ] Added to milestone: **HW[N]-2026** or **Final-2026**
+- [ ] Added to milestone: **HW3-2026**
 
 ---
 
