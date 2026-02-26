@@ -201,4 +201,6 @@ data/Stacked_379_mosaic_*.fit
 
 # IDE settings
 .vscode/
+
+# HW feedback files (not for version control)
 2026/HW/Feedback/

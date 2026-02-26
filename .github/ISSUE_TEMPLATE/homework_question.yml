@@ -1,0 +1,37 @@
+name: Homework Question
+description: Ask a question about homework requirements or concepts
+title: "[HW?] "
+labels: ["question"]
+assignees:
+  - laserlab
+body:
+  - type: dropdown
+    id: homework
+    attributes:
+      label: Which homework?
+      options:
+        - HW1
+        - HW2
+        - HW3
+        - HW4
+        - HW5
+        - HW6
+        - Final Project
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: What do you need help with?
+      placeholder: "Example: I don't understand how to set up the bridge circuit equations..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried?
+      description: What approaches have you already attempted?
+      placeholder: "Example: I tried using 3 KCL equations but my matrix is singular..."
