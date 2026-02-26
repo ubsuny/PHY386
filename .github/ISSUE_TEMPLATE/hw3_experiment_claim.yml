@@ -12,7 +12,7 @@ body:
 
         Use this issue to track all your commits, PR, and progress for HW3.
 
-        **Before submitting:** Make sure to comment on the main experiment selection issue to reserve your experiment!
+        **Before submitting:** Make sure to comment on the [main experiment selection issue (#34)](https://github.com/ubsuny/PHY386/issues/34) to reserve your experiment!
 
   - type: dropdown
     id: experiment
