@@ -1,0 +1,86 @@
+name: HW3 Experiment Claim
+description: Claim your HW3 experiment and track your progress
+title: "HW3 - [Experiment Name] - @yourusername"
+labels: ["HW3-2026", "experiment"]
+assignees:
+  - yourusername
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Track Your HW3 Experiment
+
+        Use this issue to track all your commits, PR, and progress for HW3.
+
+        **Before submitting:** Make sure to comment on the main experiment selection issue to reserve your experiment!
+
+  - type: dropdown
+    id: experiment
+    attributes:
+      label: Which experiment are you doing?
+      options:
+        - Elevator Pressure (Barometric formula)
+        - Rotating Chair (Angular damping)
+        - Magnet Distance (Dipole field 1/r^3)
+        - Speed of Sound (Group project)
+    validations:
+      required: true
+
+  - type: textarea
+    id: approach
+    attributes:
+      label: Your Approach
+      description: Brief plan for how you'll perform the experiment
+      placeholder: |
+        Example: I'll use the pressure sensor in my phone and ride the elevator in my dorm building.
+        It goes up 10 floors, so I should get enough data to fit the barometric formula.
+    validations:
+      required: false
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: Questions or Challenges
+      description: Any questions about the experiment or challenges you anticipate?
+      placeholder: "Example: For the magnet experiment, how close can I get without saturating the sensor?"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: progress
+    attributes:
+      label: Progress Checklist
+      description: Check off tasks as you complete them
+      options:
+        - label: Experiment claimed in main selection issue
+        - label: phyphox installed and sensor tested
+        - label: Raw data collected
+        - label: CSV exported and uploaded
+        - label: Data loaded and preprocessed with pandas
+        - label: Model defined and fit performed
+        - label: Visualization completed (2×2 subplot)
+        - label: Error analysis completed
+        - label: Feature branch created (`yourusername-hw3`)
+        - label: Files uploaded to branch
+        - label: Pull request opened
+        - label: Descriptive commit messages used
+        - label: PR template filled out
+        - label: Reviewer assigned (@laserlab)
+        - label: Milestone set (HW3-2026)
+        - label: Appropriate label added
+
+  - type: textarea
+    id: commits
+    attributes:
+      label: Commit Log
+      description: |
+        As you work, paste your commit messages here to track progress.
+        This helps you and the instructor see your workflow.
+      placeholder: |
+        - `Initial HW3 setup with data file`
+        - `Add data loading and preprocessing code`
+        - `Implement exponential fit model`
+        - `Create 2x2 visualization plots`
+      render: markdown
+    validations:
+      required: false
