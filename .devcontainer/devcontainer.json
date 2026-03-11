@@ -3,8 +3,7 @@
   "image": "mcr.microsoft.com/devcontainers/python:3.13",
 
   "features": {
-    "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/python": {"installJupyterlab": true}
+    "ghcr.io/devcontainers/features/git:1": {}
   },
 
   "customizations": {
@@ -22,7 +21,7 @@
     }
   },
 
-  "postCreateCommand": "pip install -r requirements/requirements_HW2026.txt",
+  "postCreateCommand": "pip install jupyterlab && pip install -r requirements/requirements_HW2026.txt",
 
   "forwardPorts": [8888],
 
