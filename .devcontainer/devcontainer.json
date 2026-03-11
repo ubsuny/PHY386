@@ -22,7 +22,7 @@
     }
   },
 
-  "postCreateCommand": "pip install -r requirements/requirements_HW2026.txt",
+  "postCreateCommand": "pip install -r requirements/requirements_HW2026.txt && python -m ipykernel install --user --name python3 --display-name 'Python 3'",
 
   "remoteUser": "vscode"
 }
