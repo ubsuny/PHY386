@@ -1,6 +1,6 @@
 {
   "name": "PHY386 Python Environment",
-  "image": "mcr.microsoft.com/devcontainers/python:3.13",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
 
   "features": {
     "ghcr.io/devcontainers/features/git:1": {}
