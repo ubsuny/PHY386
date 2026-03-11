@@ -1,6 +1,6 @@
-<!-- IMPORTANT: Change the PR title to: HW3 - 2026 - yourgithubusername -->
+<!-- IMPORTANT: Change the PR title to: HWX - 2026 - yourgithubusername -->
 
-## Homework 3 Submission
+## Homework X Submission
 
 **Workflow Check:**
 <!-- This homework uses FEATURE BRANCHES (no fork needed) -->
@@ -16,14 +16,14 @@
 
 ## Checklist
 
-- [ ] Created feature branch named `yourname-hw3` from `Homework2026`
+- [ ] Created feature branch named `yourname-hwX` from `Homework2026`
 - [ ] All code cells execute without errors
 - [ ] All functions have proper docstrings
-- [ ] Test cases pass
+- [ ] Test cases pass (if requested)
 - [ ] Answered all written questions
-- [ ] No unrelated files committed (only `2026/HW/yourname/HW3.ipynb`)
+- [ ] No unrelated files committed (only `2026/HW/yourname/HWX.ipynb` or necessary data files)
 - [ ] Assigned **@laserlab** for review
-- [ ] Added to milestone: **HW3-2026**
+- [ ] Added to milestone: **HWX-2026**
 
 ---
 
