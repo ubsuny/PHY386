@@ -21,7 +21,7 @@
     }
   },
 
-  "postCreateCommand": "pip install jupyterlab && pip install -r requirements/requirements_HW2026.txt",
+  "postCreateCommand": "pip install jupyterlab && pip install -r requirements/requirements_HW2026.txt && jupyter lab --generate-config && echo \"c.ServerApp.token = ''\" >> ~/.jupyter/jupyter_lab_config.py && echo \"c.ServerApp.ip = '0.0.0.0'\" >> ~/.jupyter/jupyter_lab_config.py",
 
   "forwardPorts": [8888],
 
