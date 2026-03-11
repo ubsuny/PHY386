@@ -1,0 +1,55 @@
+name: Type Check Homework
+
+on:
+  pull_request:
+    branches: [Homework2026]
+    paths:
+      - '2026/HW/**/*.ipynb'
+
+jobs:
+  typecheck:
+    runs-on: ubuntu-latest
+    name: mypy type check
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install mypy nbqa numpy scipy matplotlib pandas
+
+      - name: Find changed notebooks
+        id: changed
+        run: |
+          # Get notebooks changed in this PR
+          NOTEBOOKS=$(git diff --name-only --diff-filter=ACMR origin/${{ github.base_ref }}...HEAD -- '2026/HW/**/*.ipynb' || true)
+          echo "notebooks=$NOTEBOOKS" >> "$GITHUB_OUTPUT"
+          if [ -z "$NOTEBOOKS" ]; then
+            echo "No notebook changes found."
+          else
+            echo "Changed notebooks:"
+            echo "$NOTEBOOKS"
+          fi
+
+      - name: Run mypy on changed notebooks
+        if: steps.changed.outputs.notebooks != ''
+        run: |
+          EXIT_CODE=0
+          for nb in ${{ steps.changed.outputs.notebooks }}; do
+            echo "::group::Type checking $nb"
+            nbqa mypy "$nb" --ignore-missing-imports || EXIT_CODE=$?
+            echo "::endgroup::"
+          done
+          if [ $EXIT_CODE -ne 0 ]; then
+            echo ""
+            echo "::warning::Type errors found. Please fix type annotations in your functions."
+            echo "See https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html for help."
+          fi
+          # Exit with warning, not failure — don't block the PR
+          exit 0
