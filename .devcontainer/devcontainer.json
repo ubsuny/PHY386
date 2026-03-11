@@ -12,18 +12,17 @@
         "ms-python.python",
         "ms-toolsai.jupyter",
         "ms-python.vscode-pylance",
-        "eamodio.gitlens"
+        "github.copilot"
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.analysis.typeCheckingMode": "basic",
         "jupyter.interactiveWindow.textEditor.executeSelection": true
       }
     }
   },
 
-  "postCreateCommand": "pip install jupyterlab && pip install -r requirements/requirements_HW2026.txt && jupyter lab --generate-config && echo \"c.ServerApp.token = ''\" >> ~/.jupyter/jupyter_lab_config.py && echo \"c.ServerApp.ip = '0.0.0.0'\" >> ~/.jupyter/jupyter_lab_config.py",
-
-  "forwardPorts": [8888],
+  "postCreateCommand": "pip install -r requirements/requirements_HW2026.txt",
 
   "remoteUser": "vscode"
 }
