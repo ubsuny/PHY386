@@ -1,0 +1,83 @@
+name: HW4 Problem Claim
+description: Claim your HW4 PDE problem and track your progress
+title: "HW4 - [Problem A/B/C] - @yourusername"
+labels: ["HW4-2026"]
+assignees:
+  - yourusername
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Track Your HW4 PDE Problem
+
+        Use this issue to track all your commits, PR, and progress for HW4.
+
+        **Before submitting:** Make sure to comment on the [main problem selection issue](https://github.com/ubsuny/PHY386/issues/51) to reserve your problem!
+
+  - type: dropdown
+    id: problem
+    attributes:
+      label: Which PDE problem are you doing?
+      options:
+        - "Problem A: 2D Electrostatics (Laplace equation)"
+        - "Problem B: 1D Heat Equation with Source"
+        - "Problem C: Beam Deflection (Euler-Bernoulli)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: approach
+    attributes:
+      label: Your Approach
+      description: Brief plan for how you'll tackle the problem
+      placeholder: |
+        Example: I'll use scipy.sparse and spsolve to build the Laplace matrix system,
+        then visualize the potential with a contour plot and quiver for the E-field.
+    validations:
+      required: false
+
+  - type: textarea
+    id: questions
+    attributes:
+      label: Questions or Challenges
+      description: Any questions about the physics or implementation?
+      placeholder: "Example: For the beam problem, how do I handle the 4th derivative boundary conditions?"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: progress
+    attributes:
+      label: Progress Checklist
+      description: Check off tasks as you complete them
+      options:
+        - label: Problem claimed in main selection issue
+        - label: Codespace opened on fork
+        - label: Feature branch created (`yourusername-hw4`)
+        - label: PDE solver implemented with type annotations and docstrings
+        - label: Numerical solution plotted (Task 1)
+        - label: Comparison with analytical solution (Task 2)
+        - label: Extended analysis / parameter study (Task 3–4)
+        - label: AI Debugging Challenge completed
+        - label: All code cells execute without errors
+        - label: Pull request opened (fork → ubsuny/PHY386:Homework2026)
+        - label: Copilot requested as reviewer
+        - label: Copilot review response written in PR
+        - label: Descriptive commit messages used
+        - label: PR template filled out
+        - label: Reviewer assigned (@laserlab)
+        - label: Milestone set (HW4-2026)
+
+  - type: textarea
+    id: commits
+    attributes:
+      label: Commit Log
+      description: Paste your commit messages here as you work.
+      placeholder: |
+        - `Add Laplace solver with sparse matrix assembly`
+        - `Plot electric potential with contour and quiver`
+        - `Add analytical comparison and error subplot`
+        - `Complete AI debugging challenge`
+      render: markdown
+    validations:
+      required: false
