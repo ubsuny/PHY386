@@ -1,29 +1,41 @@
-<!-- IMPORTANT: Change the PR title to: HWX - 2026 - yourgithubusername -->
+## Homework [N] Submission
 
-## Homework X Submission
+<!-- Replace [N] with your homework number (4-6) or "Final" for final project -->
 
-**Workflow Check:**
-<!-- This homework uses FEATURE BRANCHES (no fork needed) -->
-<!-- Your PR should be: yourname-hw3 → Homework2026 -->
+**Assignment:** HW[N]
 
-**Type of Submission:**
-- [ ] In progress (requesting feedback, not ready to merge)
-- [ ] Final submission (all feedback addressed, ready to merge)
+---
 
-<!-- After creating the PR, add the corresponding label: homework-in-progress OR homework-final -->
+## Workflow Check
+
+<!-- This homework uses FORKS -->
+<!-- Your PR should be: yourfork/yourname-hw[N] → ubsuny/PHY386:Homework2026 -->
+<!-- Make sure you're comparing across repositories, not just branches -->
+
+---
+
+## Type of Submission
+
+<!-- Add ONE of these labels to this PR after creating it: -->
+<!-- - homework-in-progress  (requesting feedback, not ready to merge) -->
+<!-- - homework-final  (all feedback addressed, ready to merge) -->
 
 ---
 
 ## Checklist
 
-- [ ] Created feature branch named `yourname-hwX` from `Homework2026`
+- [ ] Forked the repository to `github.com/yourname/PHY386`
+- [ ] Synced your fork with upstream before starting
+- [ ] Created feature branch named `yourname-hw[N]` from `Homework2026`
 - [ ] All code cells execute without errors
-- [ ] All functions have proper docstrings
-- [ ] Test cases pass (if requested)
+- [ ] All functions have proper **type annotations** and **docstrings**
+- [ ] All plots have labeled axes with units
+- [ ] Test cases pass
 - [ ] Answered all written questions
-- [ ] No unrelated files committed (only `2026/HW/yourname/HWX.ipynb` or necessary data files)
+- [ ] No unrelated files committed (only your homework folder)
 - [ ] Assigned **@laserlab** for review
-- [ ] Added to milestone: **HWX-2026**
+- [ ] Requested **@copilot** as a reviewer
+- [ ] Added to milestone: **HW[N]-2026** or **Final-2026**
 
 ---
 
@@ -40,9 +52,16 @@
 
 ---
 
+## Copilot Code Review Response
+
+<!-- REQUIRED for HW4+: After @copilot reviews your PR, summarize here: -->
+<!-- - What did Copilot flag? -->
+<!-- - Which suggestions were useful? Which did you fix? -->
+<!-- - Which suggestions were wrong or unhelpful? Why? -->
+
 ## AI Usage
 
-<!-- If you used AI tools (ChatGPT, Claude, Copilot, etc.), describe: -->
+<!-- If you used AI tools (ChatGPT, Claude, Copilot, etc.) BEYOND the required Copilot review, describe: -->
 <!-- - Which parts of the assignment -->
 <!-- - How you verified the AI-generated code -->
-<!-- DELETE THIS SECTION if you did not use AI -->
+<!-- DELETE THIS SECTION if you did not use additional AI -->
