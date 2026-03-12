@@ -28,11 +28,13 @@
 - [ ] Synced your fork with upstream before starting
 - [ ] Created feature branch named `yourname-hw[N]` from `Homework2026`
 - [ ] All code cells execute without errors
-- [ ] All functions have proper docstrings
+- [ ] All functions have proper **type annotations** and **docstrings**
+- [ ] All plots have labeled axes with units
 - [ ] Test cases pass
 - [ ] Answered all written questions
 - [ ] No unrelated files committed (only your homework folder)
 - [ ] Assigned **@laserlab** for review
+- [ ] Requested **@copilot** as a reviewer
 - [ ] Added to milestone: **HW[N]-2026** or **Final-2026**
 
 ---
@@ -50,9 +52,16 @@
 
 ---
 
+## Copilot Code Review Response
+
+<!-- REQUIRED for HW4+: After @copilot reviews your PR, summarize here: -->
+<!-- - What did Copilot flag? -->
+<!-- - Which suggestions were useful? Which did you fix? -->
+<!-- - Which suggestions were wrong or unhelpful? Why? -->
+
 ## AI Usage
 
-<!-- If you used AI tools (ChatGPT, Claude, Copilot, etc.), describe: -->
+<!-- If you used AI tools (ChatGPT, Claude, Copilot, etc.) BEYOND the required Copilot review, describe: -->
 <!-- - Which parts of the assignment -->
 <!-- - How you verified the AI-generated code -->
-<!-- DELETE THIS SECTION if you did not use AI -->
+<!-- DELETE THIS SECTION if you did not use additional AI -->
