@@ -1,7 +1,8 @@
-# %% [markdown]
+#!/usr/bin/env python
+# coding: utf-8
+
 # <a href="https://colab.research.google.com/github/ubsuny/PHY386/blob/Homework2026/2026/HW/HW4.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# %% [markdown]
 # # Homework 4: Solving PDEs in Physics — Heat, Fields, and Beams (42 pts)
 # 
 # ## Learning Outcomes
@@ -14,7 +15,6 @@
 # - Submit homework via **fork and pull request**
 # - Work with **AI code review** (GitHub Copilot) as part of a professional PR workflow
 
-# %% [markdown]
 # ## Development Environment
 # 
 # You have two options for working on this homework:
@@ -37,7 +37,6 @@
 # 
 # **Either way, you must submit via the fork workflow** (see Submission section at the end).
 
-# %% [markdown]
 # ## Python Type Annotations
 # 
 # In HW2 you learned to write **docstrings**. Now we add **type annotations** — hints that specify what types your function expects and returns.
@@ -112,7 +111,6 @@
 # 
 # **Requirement:** All functions in this homework must have **both** type annotations **and** NumPy-style docstrings.
 
-# %% [markdown]
 # ## Background: The Finite Difference Method
 # 
 # Many physics problems reduce to partial differential equations (PDEs) that can't be solved analytically. The **finite difference method** approximates derivatives on a discrete grid.
@@ -141,7 +139,6 @@
 # 
 # Writing your own time stepper (like forward Euler) requires worrying about stability conditions ($\alpha \Delta t / \Delta x^2 < 1/2$). scipy's solvers handle this automatically — they adapt the time step to maintain accuracy and stability.
 
-# %% [markdown]
 # ## Worked Example: 1D Heat Equation on a Metal Rod
 # 
 # A metal rod of length $L$ is held at temperature $T_{\text{hot}}$ on the left end and $T_{\text{cold}}$ on the right end. The rod starts at a uniform temperature $T_0$.
@@ -158,7 +155,9 @@
 # 
 # **Analytical steady state**: When $\partial T / \partial t = 0$, we get $T'' = 0$, so $T(x) = T_{\text{hot}} + (T_{\text{cold}} - T_{\text{hot}}) \frac{x}{L}$ — a linear profile.
 
-# %%
+# In[1]:
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp, solve_bvp
@@ -204,7 +203,9 @@ plt.rcParams.update({
     'figure.figsize': (6, 4),      # default figure size
 })
 
-# %%
+# In[13]:
+
+
 def heat_rhs(t: float, T_interior: np.ndarray, alpha: float, dx: float,
              T_left: float, T_right: float) -> np.ndarray:
     """Right-hand side of the 1D heat equation for interior grid points.
@@ -272,7 +273,9 @@ print(f"Solver status: {sol.message}")
 print(f"Grid points: {N}, dx = {dx*100:.2f} cm")
 print(f"Time steps used by solver: {sol.t.size}")
 
-# %%
+# In[15]:
+
+
 # --- Plot temperature profiles at different times ---
 # Note: figsize, tick direction, and font sizes are set globally by rcParams above.
 # You only need to specify them here if you want to override the defaults.
@@ -296,12 +299,10 @@ ax.legend(fontsize=9)
 plt.tight_layout()
 #plt.show()
 
-# %% [markdown]
 # The numerical solution converges to the analytical steady-state linear profile. Notice that we didn't need to worry about stability conditions — `solve_ivp` handles the time stepping automatically.
 # 
 # ---
 
-# %% [markdown]
 # ## Step 0: Choose Your PDE Problem
 # 
 # **BEFORE YOU START:** Claim your problem using GitHub Issues (same process as HW3).
@@ -328,7 +329,6 @@ plt.tight_layout()
 # 
 # **Once you've claimed your problem, scroll to the corresponding section.**
 
-# %% [markdown]
 # ## Problem A: 2D Electrostatics — Laplace Equation (22 points)
 # 
 # ### Background
@@ -409,11 +409,12 @@ plt.tight_layout()
 # 
 # **Task A.4 (2 points):** Reduce to the 1D limit: set all four boundaries to $V = 0$ except top = 100 V. For a tall, narrow domain (e.g., 5×50 grid), the center column should approach the analytical solution $V(y) = 100 \cdot y/L_y$. Plot both the numerical center-column profile and the analytical line on the same axes.
 
-# %%
+# In[4]:
+
+
 # Problem A: Your code here
 
 
-# %% [markdown]
 # ## Problem B: 1D Heat Equation with Internal Source (22 points)
 # 
 # ### Background
@@ -486,11 +487,12 @@ plt.tight_layout()
 # 
 # **Task B.4 (2 points):** What does the source profile look like? Plot $S(x)$ and the steady-state temperature on the same figure using **twin axes** (`ax2 = ax1.twinx()`). Label both y-axes clearly.
 
-# %%
+# In[5]:
+
+
 # Problem B: Your code here
 
 
-# %% [markdown]
 # ## Problem C: Beam Deflection — Euler-Bernoulli Equation (22 points)
 # 
 # ### Background
@@ -571,11 +573,12 @@ plt.tight_layout()
 # 
 # **Task C.4 (2 points):** Parameter study — solve for the uniform load with **3 different beam heights**: $h = 5, 10, 20$ mm (keeping width fixed). **Plot** all three on one figure with a legend showing the height.
 
-# %%
+# In[6]:
+
+
 # Problem C: Your code here
 
 
-# %% [markdown]
 # ## Debugging Challenge (all students, 10 points)
 # 
 # The following function is supposed to solve the **1D wave equation** for a vibrating string:
@@ -586,7 +589,9 @@ plt.tight_layout()
 # 
 # **The code below has 4 bugs** — physics errors, coding errors, and type annotation errors. Your job is to find and fix them.
 
-# %%
+# In[7]:
+
+
 # ============================================================
 # DEBUGGING CHALLENGE — BUGGY CODE
 # DO NOT FIX THIS CELL — copy it and fix in a new cell below
@@ -672,7 +677,6 @@ ax.legend(fontsize=9)
 plt.tight_layout()
 plt.show()
 
-# %% [markdown]
 # ### Tasks
 # 
 # **Task D.1 (4 points):** Read the buggy code above carefully. List **all 4 errors** you can find in a markdown cell. For each bug, explain:
@@ -684,11 +688,12 @@ plt.show()
 # 
 # **Task D.3 (2 points):** Create a plot of your corrected solution showing the string at several time steps. Does the behavior match what you expect for a plucked string? Briefly explain.
 
-# %%
+# In[8]:
+
+
 # Your corrected code here
 
 
-# %% [markdown]
 # ## Submission: Fork Workflow & AI Code Review (10 points)
 # 
 # ### Fork Workflow (8 points)
@@ -751,7 +756,6 @@ plt.show()
 # - [ ] Requested `@copilot` as a reviewer
 # - [ ] Responded to Copilot's review comments with fixes or explanations
 
-# %% [markdown]
 # ## Resources
 # 
 # - [Python Type Hints Cheat Sheet (mypy)](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html)
@@ -764,5 +768,3 @@ plt.show()
 # - [GitHub Forking Workflow](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks)
 # - [Griffiths, Introduction to Electrodynamics, Ch. 3](https://en.wikipedia.org/wiki/Introduction_to_Electrodynamics) (Laplace equation)
 # - [Euler-Bernoulli Beam Theory](https://en.wikipedia.org/wiki/Euler%E2%80%93Bernoulli_beam_theory)
-
-
