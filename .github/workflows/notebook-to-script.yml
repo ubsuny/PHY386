@@ -37,17 +37,18 @@ jobs:
 
       - name: Find changed notebooks
         id: changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Compare fork head against base to find changed notebooks
-          git fetch origin ${{ github.base_ref }} --depth=1
-          NOTEBOOKS=$(git diff --name-only --diff-filter=ACMR FETCH_HEAD...HEAD -- '2026/HW/**/*.ipynb' 2>/dev/null || true)
-          # Newlines break GITHUB_OUTPUT multiline — use space-separated list
-          NOTEBOOKS_ONELINE=$(echo "$NOTEBOOKS" | tr '\n' ' ' | xargs)
-          echo "notebooks=$NOTEBOOKS_ONELINE" >> "$GITHUB_OUTPUT"
-          if [ -z "$NOTEBOOKS_ONELINE" ]; then
+          # Use the GitHub API to get PR file list — reliable for both fork and same-repo PRs
+          NOTEBOOKS=$(gh api repos/ubsuny/PHY386/pulls/${{ github.event.pull_request.number }}/files \
+            --paginate --jq '.[] | select(.filename | test("2026/HW/.*\\.ipynb$")) | .filename' \
+            | tr '\n' ' ' | xargs)
+          echo "notebooks=$NOTEBOOKS" >> "$GITHUB_OUTPUT"
+          if [ -z "$NOTEBOOKS" ]; then
             echo "No notebook changes found."
           else
-            echo "Changed notebooks: $NOTEBOOKS_ONELINE"
+            echo "Changed notebooks: $NOTEBOOKS"
           fi
 
       - name: Convert notebooks to Python scripts
