@@ -1,0 +1,71 @@
+name: Convert Notebooks for Copilot Review
+
+on:
+  pull_request:
+    branches: [Homework2026]
+    paths:
+      - '2026/HW/**/*.ipynb'
+
+jobs:
+  nbconvert:
+    runs-on: ubuntu-latest
+    name: Export .ipynb → .py for Copilot
+
+    # Needs write permission to commit the .py files back
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          # Check out the actual PR branch so we can push back to it
+          ref: ${{ github.head_ref }}
+          # Use a token that allows pushing to the branch
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install nbconvert
+        run: pip install nbconvert
+
+      - name: Find changed notebooks
+        id: changed
+        run: |
+          NOTEBOOKS=$(git diff --name-only --diff-filter=ACMR origin/${{ github.base_ref }}...HEAD -- '2026/HW/**/*.ipynb' || true)
+          echo "notebooks=$NOTEBOOKS" >> "$GITHUB_OUTPUT"
+          if [ -z "$NOTEBOOKS" ]; then
+            echo "No notebook changes found."
+          else
+            echo "Changed notebooks:"
+            echo "$NOTEBOOKS"
+          fi
+
+      - name: Convert notebooks to Python scripts
+        if: steps.changed.outputs.notebooks != ''
+        run: |
+          for nb in ${{ steps.changed.outputs.notebooks }}; do
+            echo "Converting $nb"
+            jupyter nbconvert --to script "$nb"
+          done
+
+      - name: Commit .py files back to branch
+        if: steps.changed.outputs.notebooks != ''
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Stage only the generated .py files (not the notebooks themselves)
+          git add '2026/HW/**/*.py' || true
+          git add 2026/HW/*.py 2>/dev/null || true
+
+          # Only commit if there is actually something new
+          if git diff --cached --quiet; then
+            echo "No new .py files to commit."
+          else
+            git commit -m "ci: export notebooks to .py for Copilot review [skip ci]"
+            git push origin HEAD:${{ github.head_ref }}
+          fi
