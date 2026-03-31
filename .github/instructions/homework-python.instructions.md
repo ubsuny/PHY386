@@ -1,5 +1,5 @@
 ---
-applyTo: "2026/HW/**/*.ipynb"
+applyTo: "2026/HW/**/*.{ipynb,py}"
 ---
 
 # Homework Notebook Review — Python in Jupyter
