@@ -58,7 +58,7 @@ jobs:
           PY_FILES=""
           for nb in ${{ steps.changed.outputs.notebooks }}; do
             echo "Converting $nb"
-            jupyter nbconvert --to script "$nb" --quiet
+            jupyter nbconvert --to script "$nb"
             py="${nb%.ipynb}.py"
             if [ -f "$py" ]; then
               PY_FILES="$PY_FILES $py"
