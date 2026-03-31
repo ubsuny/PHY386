@@ -17,7 +17,6 @@ jobs:
 
     permissions:
       contents: write
-      pull-requests: write
 
     steps:
       # Safe checkout: check out the fork's exact commit SHA for reading notebooks.
@@ -102,19 +101,3 @@ jobs:
             echo "✓ Pushed $py"
           done
 
-      # Add @copilot as reviewer so it automatically reviews the .py files.
-      # Only add if not already a reviewer to avoid duplicate review requests.
-      - name: Request Copilot review
-        if: steps.convert.outputs.py_files != ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          PR_NUMBER=${{ github.event.pull_request.number }}
-          EXISTING=$(gh api repos/ubsuny/PHY386/pulls/$PR_NUMBER/requested_reviewers \
-            --jq '.users[].login' 2>/dev/null || echo "")
-          if echo "$EXISTING" | grep -q "copilot"; then
-            echo "Copilot already requested as reviewer."
-          else
-            gh pr edit $PR_NUMBER --repo ubsuny/PHY386 --add-reviewer copilot
-            echo "✓ Added @copilot as reviewer"
-          fi
