@@ -57,8 +57,13 @@ jobs:
         run: |
           PY_FILES=""
           for nb in ${{ steps.changed.outputs.notebooks }}; do
+            # Skip empty or missing notebooks
+            if [ ! -s "$nb" ]; then
+              echo "Skipping $nb (empty or missing)"
+              continue
+            fi
             echo "Converting $nb"
-            jupyter nbconvert --to script "$nb"
+            jupyter nbconvert --to script "$nb" || { echo "Warning: failed to convert $nb"; continue; }
             py="${nb%.ipynb}.py"
             if [ -f "$py" ]; then
               PY_FILES="$PY_FILES $py"
