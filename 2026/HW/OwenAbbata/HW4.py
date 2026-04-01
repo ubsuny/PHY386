@@ -529,21 +529,72 @@ plt.show()
 
 
 #  # Redefine source as a function of x, as it's needed for arbitrary x values in solve_bvp
-def S_bvp(x_val):
-    return S_init * np.exp(-0.5 * ((x_val - L/2) / sigma)**2)
+def S_bvp(x_val: np.ndarray) -> np.ndarray:
+    """
+    Compute the spatially varying heat source term for the BVP.
+
+    Parameters
+    ----------
+    x_val : numpy.ndarray
+        Position(s) along the rod in meters where the source term S(x) is
+        evaluated.
+
+    Returns
+    -------
+    numpy.ndarray
+        Source term values S(x) in units of K/s evaluated at the input
+        positions.
+    """
+    return S_init * np.exp(-0.5 * ((x_val - L / 2) / sigma) ** 2)
 
 # Define the ODE system: y[0] = T, y[1] = dT/dx
-def fun_bvp(x, y):
+def fun_bvp(x: np.ndarray, y: np.ndarray) -> np.ndarray:
+    """
+    Right-hand side of the second-order steady-state heat equation written
+    as a first-order system for solve_bvp.
+
+    Parameters
+    ----------
+    x : numpy.ndarray
+        Positions along the rod in meters.
+    y : numpy.ndarray
+        State vector array with shape (2, x.size), where
+        y[0, :] is the temperature T(x) in Kelvin and
+        y[1, :] is the spatial derivative dT/dx in K/m.
+
+    Returns
+    -------
+    numpy.ndarray
+        Array with shape (2, x.size) containing the derivatives:
+        y[0]' = dT/dx (K/m) and y[1]' = d²T/dx² (K/m²).
+    """
     # y[0]' = y[1]
     # y[1]' = -S_bvp(x)/alpha
     return np.vstack([y[1], -S_bvp(x) / alpha])
 
 # Define the boundary conditions
-def bc_bvp(ya, yb):
+def bc_bvp(ya: np.ndarray, yb: np.ndarray) -> list[float]:
+    """
+    Boundary condition residuals for the steady-state heat BVP.
+
+    Parameters
+    ----------
+    ya : numpy.ndarray
+        State vector at the left boundary x = 0. ya[0] is T(0) in Kelvin.
+    yb : numpy.ndarray
+        State vector at the right boundary x = L. yb[0] is T(L) in Kelvin.
+
+    Returns
+    -------
+    list of float
+        Residuals of the boundary conditions:
+        [T(0) - T_left, T(L) - T_right]. The BVP is satisfied when both
+        residuals are zero.
+    """
     # ya is y at x=0
     # yb is y at x=L
     # We want T(0) = T_left and T(L) = T_right
-    return [ya[0] - T_left, yb[0] - T_right]
+    return [float(ya[0] - T_left), float(yb[0] - T_right)]
 
 # Initial guess for the solution
 # A simple linear guess for T and constant for T'
