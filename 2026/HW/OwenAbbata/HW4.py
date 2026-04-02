@@ -855,7 +855,7 @@ for step in range(n_steps):
 
 ax.set_xlabel('Position (cm)')
 ax.set_ylabel('Displacement (cm)')
-ax.set_title('1D Wave Equation — Vibrating String (BUGGY)')
+ax.set_title('1D Wave Equation — Vibrating String (Corrected Solution)')
 ax.legend(fontsize=9)
 plt.tight_layout()
 plt.show()
