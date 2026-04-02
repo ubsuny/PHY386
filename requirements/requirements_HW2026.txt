@@ -4,3 +4,4 @@ matplotlib>=3.7
 pandas>=2.0
 jupyter>=1.0
 schemdraw>=0.18
+scikit-learn>=1.3
